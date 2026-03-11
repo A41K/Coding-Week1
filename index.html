@@ -10,24 +10,49 @@
     <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1 class="title">Welcome to My Website</h1>
-    <h2 class="subtitle">Enjoy your stay!</h2>
+    <div class="main-container">
+        <header>
+            <h1 class="title">Welcome to My Website</h1>
+            <h2 class="subtitle">Enjoy your stay!</h2>
+            <div class="profile-section">
+                <h2 class="name">My name is Andrew a.k.a A41K</h2>
+                <h3 class="yap">I have been programming for over 4 years now and can find my projects at <a href="https://a41k.me" class="link">a41k.me</a></h3>
+                <h3 class="yap2">It honestly has been a wild ride and it's mostly thanks to HackClub so ❤️</h3>
+            </div>
+        </header>
 
-
-    <h2 class="name">My name is Andrew a.k.a A41K</h2>
-        <h3 class="yap"><span class="yap2">I have been programming for over 4 years now and can find my projects at <a href="https://a41k.me" class="link">a41k.me</a></h3>
-        <h3 class="yap2">It honestly has been a wild ride and it's mostly thanks to HackClub so ❤️</h3>       
-    
-            <div>
+        <div class="dashboard">
+            <div class="card game-card">
+                <h2>Clicker Game</h2>
                 <button class="bleh">Click me!</button>
                 <progress value="0" max="250"></progress>
                 <h1 class="win">You win... nothing?</h1>
             </div>
             
-            <div>
+            <div class="card calc-card">
+                <h2>Quick Math</h2>
                 <input type="text" class="input" placeholder="Try adding numbers together">
             </div>
-    
+
+            <div class="card message-board">
+                <div class="header-container">
+                    <h2>Message Board</h2>
+                    <button id="reset-button">Reset</button>
+                </div>
+                <div id="active-group">To: No one yet...</div>
+                <div class="username-container">
+                    <label for="username-input">Your Name:</label>
+                    <input type="text" id="username-input" placeholder="Enter unique name" value="">
+                    <span id="name-status" style="font-size: 10px;"></span>
+                </div>
+                <div id="messages-container"></div>
+                <div class="input-container">
+                    <input type="text" id="message-input" placeholder="Type a message..." disabled>
+                    <button id="send-button" disabled>Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <script src="script.js"></script>
 </body>

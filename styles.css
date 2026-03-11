@@ -1,42 +1,66 @@
-body{
+body {
     background-color: cornsilk;
-    font-family: 'Comic Relief', cursive;
+    font-family: 'Comic Relief', cursive, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-.title{
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
     text-align: center;
+    margin-bottom: 40px;
+}
+
+.title {
     color: black;
     font-size: 50px;
-    margin-top: 100px;
+    margin-bottom: 5px;
+    margin-top: 20px;
 }
 
-.subtitle{
+.subtitle {
+    margin-top: 0;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.profile-section {
     text-align: center;
-    margin-top: -20px;
-    transform-style: flat;
-    color: black;
-    font-size: 30px;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    max-width: 800px;
 }
 
-.name{
-    margin-top: 50px;
+.name {
+    margin-top: 0;
     text-decoration: underline;
+    color: #222;
+    font-size: 24px;
 }
 
-.link{
+.link {
     text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
 }
 
-.yap{
-    margin-top: -20px;
-    transform-style: flat;
-    color: black;
-}
-
-.yap2{
-    margin-top: -20px;
-    transform-style: flat;
-    color: black;
+.yap, .yap2 {
+    color: #444;
+    font-weight: normal;
+    margin: 5px 0;
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 .bleh{
@@ -48,7 +72,245 @@ body{
     cursor: pointer;
     margin-top: 20px;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: transform 0.1s;
+    width: 80%;
+}
+
+.bleh:active {
+    transform: scale(0.95);
+}
+
+progress {
+    margin-top: 15px;
+    width: 80%;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 10px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #007bff;
+    border-radius: 10px;
+}
+
+.input {
+    width: 80%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.win {
+    display: none;
+    color: green;
+    font-size: 20px;
+    margin-top: 10px;
+    animation: fadeIn 0.5s;
+}
+
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.card {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.game-card, .calc-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 250px;
+    justify-content: center;
+}
+
+.message-board {
+    flex: 1;
+    min-width: 350px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    height: 600px; 
+    margin: 0; 
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.header-container h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+#reset-button {
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #dc3545;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 5px 10px;
+    transition: background-color 0.2s;
+}
+
+#reset-button:hover {
+    background-color: #ffe6e6;
+}
+
+#active-group {
+    font-size: 13px;
+    color: #8e8e93;
+    padding: 8px 0;
+    text-align: center;
+    font-weight: 500;
+}
+
+.username-container {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+#username-input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-family: inherit;
+    flex-grow: 1;
+    transition: border-color 0.2s;
+}
+
+#username-input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+#username-input.error {
+    border-color: #dc3545;
+    background-color: #fff8f8;
+}
+
+#messages-container {
+    flex-grow: 1; 
+    overflow-y: auto;
+    border: none;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #f5f5f7;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; 
+}
+
+.message-bubble {
+    padding: 10px 15px;
+    border-radius: 20px;
+    max-width: 70%;
+    word-wrap: break-word;
+    font-size: 16px;
+    line-height: 1.4;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.sender-name {
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 2px;
+    margin-left: 10px;
+    align-self: flex-start;
+}
+
+.message-sent {
+    background-color: #007AFF; 
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 5px;
+    margin-right: 5px;
+}
+
+.message-received {
+    background-color: #E5E5EA; 
+    color: black;
+    align-self: flex-start;
+    border-bottom-left-radius: 5px;
+    margin-left: 5px;
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+#message-input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+}
+
+#send-button {
+    padding: 10px 15px;
+    background-color: #007AFF;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+#send-button:hover {
+    background-color: #0063CC;
 }
 
 .bleh:hover{
@@ -68,6 +330,11 @@ body{
     padding: 10px;
     margin-top: 20px;
     font-size: 16px;
-    width: 18%;
+    width: 60%;
     box-sizing: border-box;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
