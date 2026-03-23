@@ -1,1 +1,1 @@
-Made a personal site with a public chat board thats all really
+Made a personal site with a public chat board a calculator and a small clicking type thing
